@@ -1,0 +1,13 @@
+{
+    "name": "url-finder",
+    "version": "0.1",
+
+    "content_scripts": [
+        {   
+            "matches": ["*://*/*"], 
+            "js": [ "scan.js" ],
+            "run_at": "document_start",
+            "all_frames" : true
+        }
+    ]
+}
