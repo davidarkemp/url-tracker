@@ -45,7 +45,7 @@ describe("PersistantArray",function() {
     });
 
 
-    it("should mimick an array", function() {
+    it("should mimic an array", function() {
         theArray.push("two");
         theArray.push("one");
         expect(theArray.values).toEqual(["two", "one"]);
