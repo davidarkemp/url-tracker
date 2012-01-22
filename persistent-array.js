@@ -1,7 +1,14 @@
 
 
 function PersistentArray(name) {
+
+
     this.internal = [];
+
+    if(window.localStorage[name]) {
+        this.internal = JSON.parse(window.localStorage[name]);
+    }
+
     var self = this;
     var wrappedFunctions = [ "push", "pop", "shift", "unshift" ];
 

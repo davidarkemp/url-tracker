@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+
+<script type="text/javascript" src="persistent-array.js" ></script>
+<script type="text/javascript">
+    var count = 0;
+    var foundUrls = new PersistentArray("found-urls");
+    chrome.extension.onRequest.addListener(
+        function(request, sender, sendResponse) {
+            if(!sender.tab) return;
+
+            if(request.type == "foundUrl") {
+                foundUrls.unshift(request.url);
+                ++count;
+                chrome.browserAction.setBadgeText({ "text": count.toString() });
+            }
+        });
+</script>
+
+</body>
+</html>

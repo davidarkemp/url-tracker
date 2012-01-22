@@ -42,6 +42,8 @@ function reveal(url) {
     });
     theDiv.appendChild(closeLink);
     theReveal.appendChild(theDiv);
+
+    chrome.extension.sendRequest({ "type":"foundUrl", "url": url});
 }
 
 

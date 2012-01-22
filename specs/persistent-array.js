@@ -1,7 +1,7 @@
 
 var storageName = "testValue";
 function resetStorage() {
-    window.localStorage[storageName] = undefined;
+    window.localStorage.clear();
 }
 beforeEach(resetStorage);
 //afterEach(resetStorage);
@@ -17,7 +17,7 @@ function storedValue() {
     return window.localStorage[storageName];
 }
 
-describe("PersistantArray",function() {
+describe("PersistentArray",function() {
     var theArray = new PersistentArray(storageName);
     beforeEach(function() {
         theArray = new PersistentArray(storageName);
@@ -55,5 +55,12 @@ describe("PersistantArray",function() {
         expect(theArray.values).toEqual(["one", "two"]);
         expect(theArray.shift()).toEqual("one");
         expect(theArray.values).toEqual(["two"]);
+    });
+
+    it("should load from existing value", function() {
+        theArray.push("bam!");
+        theArray = new PersistentArray(storageName);
+        console.log(storedValue());
+        expect(theArray.values).toEqual(["bam!"])
     });
 });
