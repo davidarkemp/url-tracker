@@ -1,0 +1,8 @@
+* url-tracker
+
+A Chromium/Chrome extension to alert you when resources are included in pages.
+
+** why?
+
+Testing google analytics installation, testing third-party tracking installation, that sort of thing.
+

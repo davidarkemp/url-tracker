@@ -7,7 +7,7 @@ function findDocument() {
     if(window.top) {
         return window.top.document;
     }
-    if(window.frameElement) {
+    if(window.frameElement && window.frameElement.nodeName == "IFRAME") {
         return window.frameElement.ownerDocument;
     }
     return window.document;
