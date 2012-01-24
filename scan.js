@@ -29,13 +29,15 @@ function reveal(url) {
         theReveal.style.top = 0;
         theReveal.style.left = 0;
         theReveal.style.width = "100%";
-        theReveal.style.background = "#eee";
+        theReveal.style.background = "#000";
+		theReveal.style.color = "#fff";
         theReveal.style.zIndex = "2147483647";
         document.body.appendChild(theReveal);
     }
     var theDiv = document.createElement("p");
+	theDiv.style.color = "#fff";
     theDiv.appendChild(document.createTextNode("found " + url + " "));
-    var closeLink = document.createElement("a");
+    var closeLink = document.createElement("button");
     closeLink.appendChild(document.createTextNode("ok"));
     closeLink.addEventListener("click", function() {
         theReveal.removeChild(theDiv);

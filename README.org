@@ -6,3 +6,6 @@ A Chromium/Chrome extension to alert you when resources are included in pages.
 
 Testing google analytics installation, testing third-party tracking installation, that sort of thing.
 
+** resources	
+
+"Glasses" icon by Kyle Scott, from thenounproject.com collection. (http://thenounproject.com/noun/glasses/#icon-No1017)

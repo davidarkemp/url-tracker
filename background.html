@@ -16,7 +16,7 @@
             if(!sender.tab) return;
 
             if(request.type == "foundUrl") {
-                foundUrls.unshift(request.url);
+                foundUrls.unshift({ "url": request.url, "when": new Date() });
                 ++count;
                 chrome.browserAction.setBadgeText({ "text": count.toString() });
             }
